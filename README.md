@@ -1,11 +1,11 @@
 # fimsgrowth
 
 An R package can have one DLL, so multiple models (von Bertalanffy, GCM, etc.)
-need to be wrapped together into a single DLL.
+need to be combined into a single DLL.
 
 The [unmarked](https://cran.r-project.org/package=unmarked) package demonstrates
-how this can be done in a TMB package. The `unmarked_TMBExports.cpp` file wraps
-the models together,
+how this can be done in a TMB package. The `unmarked_TMBExports.cpp` file
+combines the models,
 
 ```cpp
 #include "tmb_pcount.hpp"
@@ -16,7 +16,7 @@ the models together,
 #include "tmb_goccu.hpp"
 ```
 
-and directs which C++ function should be run:
+and then decides which C++ function should be run:
 
 ```cpp
 template<class Type>
